@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Relenox\\Desktop\\Proj-PVR\\PVR\\PVR.csproj",
+      "projectUniqueName": "C:\\Users\\Relenox\\source\\repos\\Relenox-Dev\\Project-PVR\\PVR.csproj",
       "projectName": "PVR",
-      "projectPath": "C:\\Users\\Relenox\\Desktop\\Proj-PVR\\PVR\\PVR.csproj",
+      "projectPath": "C:\\Users\\Relenox\\source\\repos\\Relenox-Dev\\Project-PVR\\PVR.csproj",
       "packagesPath": "C:\\Users\\Relenox\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Relenox\\Desktop\\Proj-PVR\\PVR\\obj\\",
+      "outputPath": "C:\\Users\\Relenox\\source\\repos\\Relenox-Dev\\Project-PVR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Relenox\\AppData\\Roaming\\NuGet\\NuGet.Config",
