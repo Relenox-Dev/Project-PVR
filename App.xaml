@@ -3,7 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PVR"
              StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
+	<Application.Resources>
+		<ResourceDictionary>
+			<FontFamily x:Key="JetBrains">/Fonts/JetBrainsMono-Regular.ttf #JetBrains</FontFamily>
+			<FontFamily x:Key="Lato">/Fonts/Lato-Regular.ttf #Lato</FontFamily>
+			<FontFamily x:Key="Roboto">/Fonts/Roboto-Regular.ttf #Roboto</FontFamily>
+			
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="./Themes/ModListItem.xaml"/>
+				<ResourceDictionary Source="./Themes/ButtonHover.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>
