@@ -97,10 +97,28 @@
 			<StackPanel HorizontalAlignment="Left"
 						Orientation="Horizontal"
 						Margin="10,0,10,0">
-
+                
+				<!-- Browse button -->
 				<Button Style="{DynamicResource ButtonHover}"
 						Width="80"
 						Height="25"
+						Background="#3300ADB5"
+						BorderThickness="0"
+                        Command="{Binding BrowseButtonClick}">
+
+					<Label Content="Select Folder"
+						   Foreground="#EEEEEE"
+						   FontFamily="{DynamicResource Lato}"
+						   FontSize="14"
+						   Padding="0,0,0,0" />
+
+				</Button>
+
+                <!-- List view button -->
+                <Button Style="{DynamicResource ButtonHover}"
+						Width="80"
+						Height="25"
+						Margin="10,0,0,0"
 						Background="#3300ADB5"
 						BorderThickness="0">
 
@@ -111,7 +129,7 @@
 						   Padding="0,0,0,0" />
 
 				</Button>
-				
+
 
 			</StackPanel>
 			

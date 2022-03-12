@@ -16,6 +16,11 @@
   <ItemGroup>
     <Folder Include="Images\" />
     <Folder Include="MVVM\View\" />
+    <Folder Include="s4pi\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
