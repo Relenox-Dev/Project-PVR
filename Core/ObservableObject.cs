@@ -10,7 +10,7 @@ namespace PVR.Core
 {
 	internal class ObservableObject : INotifyPropertyChanged
 	{
-		public event PropertyChangedEventHandler? PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
 		public void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{

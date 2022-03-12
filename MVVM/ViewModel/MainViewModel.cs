@@ -47,25 +47,6 @@ namespace PVR.MVVM.ViewModel
 		public MainViewModel()
 		{
             Mods = new ObservableCollection<ModModel>();
-            /*
-            
-
-            Mods.Add(new ModModel
-            {
-                Name = "123",
-                Type = "Boots"
-            });
-
-            for (int i = 0; i < 20; i++)
-			{
-                Mods.Add(new ModModel
-                {
-                    Name = $"{i}",
-                    Type = "Furniture"
-                });
-            }
-            
-             */
 
         }
 
@@ -78,24 +59,13 @@ namespace PVR.MVVM.ViewModel
                 {
                     modFolderPath = _modFolder.SelectedPath;
 
-                    GetModData modData  = new GetModData();
-                    List<string> modNames = modData.ModDataList(modFolderPath);
-
-                    foreach (string modName in modNames)
-                    {
-                        Mods.Add(new ModModel
-                        {
-                            Name = modName,
-                            Type = "TEST"
-                        });
-                    }
+                    GetModData modData = new GetModData();
+                    List<ModModel> modList = modData.ReturnModModelObjectCollection(modFolderPath);
+                    foreach (ModModel mod in modList){
+                        Mods.Add(mod);
+					}
                 }
             }
-        }
-
-        public void FillList()
-        {
-            
         }
 
     }

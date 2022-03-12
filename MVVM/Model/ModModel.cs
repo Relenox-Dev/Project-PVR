@@ -8,6 +8,7 @@ namespace PVR.MVVM.Model
 {
 	internal class ModModel
 	{
+		public string FileName { get; set; }
 		public string Name { get; set; }
 		public string Type { get; set; }
 	}

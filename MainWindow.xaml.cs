@@ -26,11 +26,11 @@ namespace PVR
             InitializeComponent();
         }
 
-		private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-		{       
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
-		}
+        }
 
         private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
         {
@@ -41,5 +41,6 @@ namespace PVR
         {
             Application.Current.Shutdown();
         }
-	}
+    }
 }
+

@@ -17,8 +17,8 @@
 							Height="25"
 							CornerRadius="3"
 							Margin="8,5,8,0">
-						
-						<Label Content="{Binding Name}"
+
+                        <Label Content="{Binding FileName}"
 							   Foreground="#EEEEEE"
 							   FontSize="12"
 							   FontFamily="{DynamicResource Roboto}"

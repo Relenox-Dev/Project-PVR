@@ -1,10 +1,10 @@
 ﻿<Window x:Class="PVR.MainWindow"
-		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:local="clr-namespace:PVR"
-		xmlns:viewmodel="clr-namespace:PVR.MVVM.ViewModel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PVR"
+        xmlns:viewmodel="clr-namespace:PVR.MVVM.ViewModel"
 		mc:Ignorable="d"
 		Height="720" Width="1280"
 		Background="#222831"
@@ -12,50 +12,50 @@
 		AllowsTransparency="True"
 		ResizeMode="CanMinimize">
 
-	<Window.DataContext>
-		<viewmodel:MainViewModel/>
-	</Window.DataContext>
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
 
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="25"/>
-			<RowDefinition Height="35"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="350"/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-		<!-- Title Bar -->
-		<Border	Grid.ColumnSpan="2"
+        <!-- Title Bar -->
+        <Border	Grid.ColumnSpan="2"
 				Background="#393e46"
 				Padding="5,0,5,0"
 				MouseDown="Border_MouseDown">
 
-			<Grid HorizontalAlignment="Stretch">
+            <Grid HorizontalAlignment="Stretch">
 
-				<!-- Title -->
-				<Label Content="Projekt - PVR"
+                <!-- Title -->
+                <Label Content="Projekt - PVR"
 					   Foreground="#EEEEEE"
 					   FontFamily="Lato"
 					   FontWeight="SemiBold"
 					   Padding="5,1,0,0"
 					   VerticalContentAlignment="Center"/>
 
-				<StackPanel HorizontalAlignment="Right"
+                <StackPanel HorizontalAlignment="Right"
 							Orientation="Horizontal">
 
-					<!-- Minimize button -->
-					<Button Style="{DynamicResource ButtonHover}"
+                    <!-- Minimize button -->
+                    <Button Style="{DynamicResource ButtonHover}"
 							Width="40"
 							Height="20"
 							Background="Transparent"
 							BorderThickness="0"
 							Click="ButtonMinimize_Click">
 
-						<Label Content="🗕"
+                        <Label Content="🗕"
 							   Padding="0,0,0,0"
 							   Margin="-1,-9,0,0"
 							   Foreground="#EEEEEE"
@@ -63,17 +63,18 @@
 							   FontWeight="Bold"
 							   HorizontalContentAlignment="Center"
 							   VerticalContentAlignment="Center"/>
-					</Button>
+                    </Button>
 
-					<!-- Close button -->
-					<Button Style="{DynamicResource ButtonHover}"
+                    <!-- Close button -->
+                    <Button Style="{DynamicResource ButtonHover}"
 							Width="40"
 							Height="20"
 							Background="Transparent"
 							BorderThickness="0"
-							Click="ButtonClose_Click" Padding="0,0,0,0">
+							Click="ButtonClose_Click"
+                            Padding="0,0,0,0">
 
-						<Label Content="🞪"
+                        <Label Content="🞪"
 							   Padding="0,0,0,0"
 							   Margin="0,-4,0,0"
 							   Foreground="#EEEEEE"
@@ -81,38 +82,38 @@
 							   FontWeight="Bold"
 							   HorizontalContentAlignment="Center"
 							   VerticalContentAlignment="Center"/>
-					</Button>
+                    </Button>
 
-				</StackPanel>
-			</Grid>
+                </StackPanel>
+            </Grid>
 
-		</Border>
+        </Border>
 
-		<!-- Quick Access Row-->
-		<Grid Background="#7F393E46"
+        <!-- Quick Access Row-->
+        <Grid Background="#7F393E46"
 			  Grid.Row="1"
 			  Grid.ColumnSpan="2">
 
-			<!-- Left Side Buttons -->
-			<StackPanel HorizontalAlignment="Left"
+            <!-- Left Side Buttons -->
+            <StackPanel HorizontalAlignment="Left"
 						Orientation="Horizontal"
 						Margin="10,0,10,0">
-                
-				<!-- Browse button -->
-				<Button Style="{DynamicResource ButtonHover}"
+
+                <!-- Browse button -->
+                <Button Style="{DynamicResource ButtonHover}"
 						Width="80"
 						Height="25"
 						Background="#3300ADB5"
 						BorderThickness="0"
                         Command="{Binding BrowseButtonClick}">
 
-					<Label Content="Select Folder"
+                    <Label Content="Select Folder"
 						   Foreground="#EEEEEE"
 						   FontFamily="{DynamicResource Lato}"
 						   FontSize="14"
 						   Padding="0,0,0,0" />
 
-				</Button>
+                </Button>
 
                 <!-- List view button -->
                 <Button Style="{DynamicResource ButtonHover}"
@@ -122,75 +123,75 @@
 						Background="#3300ADB5"
 						BorderThickness="0">
 
-					<Label Content="List"
+                    <Label Content="List"
 						   Foreground="#EEEEEE"
 						   FontFamily="{DynamicResource Lato}"
 						   FontSize="14"
 						   Padding="0,0,0,0" />
 
-				</Button>
+                </Button>
 
 
-			</StackPanel>
-			
-			<!-- Right Side Buttons -->
-			<StackPanel HorizontalAlignment="Right"
+            </StackPanel>
+
+            <!-- Right Side Buttons -->
+            <StackPanel HorizontalAlignment="Right"
 						Orientation="Horizontal"
 						Margin="10,0,10,0">
 
-				<Button Style="{DynamicResource ButtonHover}" 
+                <Button Style="{DynamicResource ButtonHover}" 
 						Width="80"
 						Height="25"
 						Background="#3300ADB5"
 						BorderThickness="0">
 
-					<Label Content="Options"
+                    <Label Content="Options"
 						   Foreground="#EEEEEE"
 						   FontFamily="{DynamicResource Lato}"
 						   FontSize="14"
 						   Padding="0,0,0,0" />
 
-				</Button>
+                </Button>
 
-			</StackPanel>
-			
-		</Grid>
+            </StackPanel>
 
-		<Grid Background="#7F393E46"
+        </Grid>
+
+        <Grid Background="#7F393E46"
 			  Grid.Row="2"
 			  Margin="10,10,5,10">
 
-			<ListView ItemsSource="{Binding Mods}"
+            <ListView ItemsSource="{Binding Mods}"
 					  Background="Transparent"
 					  BorderThickness="0"
 					  ItemContainerStyle="{StaticResource ModListItem}"
 					  SelectedItem="{Binding SelectedMod}"/>
 
-		</Grid>
+        </Grid>
 
-		<Grid Background="#7F393E46"
+        <Grid Background="#7F393E46"
 			  Grid.Row="2"
 			  Grid.Column="1"
 			  Margin="5,10,10,10">
 
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-				<Label Grid.Row="0"
+                <Label Grid.Row="0"
 					   Grid.Column="0"
 					   Content="{Binding SelectedMod.Type}"
 					   Foreground="#EEEEEE"
 					   FontSize="20"/>
-			</Grid>
-			
-		</Grid>
-		
-	</Grid>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
 </Window>
