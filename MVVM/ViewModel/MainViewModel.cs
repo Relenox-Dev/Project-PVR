@@ -17,16 +17,16 @@ namespace PVR.MVVM.ViewModel
 
         public string modFolderPath;
 
-		private ModModel _selectedMod;
-		public ModModel SelectedMod
+        private ModModel _selectedMod;
+        public ModModel SelectedMod
         {
-			get { return _selectedMod; }
-			set 
+            get { return _selectedMod; }
+            set 
             { 
                 _selectedMod = value;
                 OnPropertyChanged();
             }
-		}
+        }
 
         private ICommand _browseButtonClick;
         public ICommand BrowseButtonClick
@@ -38,20 +38,20 @@ namespace PVR.MVVM.ViewModel
                     _browseButtonClick = new RelayCommand(
                         p => true,
                         p => this.PopulateModNameList());
-				}
+                }
                 return _browseButtonClick;
             }
-		}
+        }
 
 
-		public MainViewModel()
-		{
+        public MainViewModel()
+        {
             Mods = new ObservableCollection<ModModel>();
 
         }
 
         public void PopulateModNameList()
-		{
+        {
             VistaFolderBrowserDialog _modFolder = new VistaFolderBrowserDialog();
             if ((bool)_modFolder.ShowDialog())
             {
@@ -63,7 +63,7 @@ namespace PVR.MVVM.ViewModel
                     List<ModModel> modList = modData.ReturnModModelObjectCollection(modFolderPath);
                     foreach (ModModel mod in modList){
                         Mods.Add(mod);
-					}
+                    }
                 }
             }
         }

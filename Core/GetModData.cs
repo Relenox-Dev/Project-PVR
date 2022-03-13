@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -66,10 +67,11 @@ namespace PVR.Core
 		public List<ModModel> ReturnModModelObjectCollection(string modFolderPath)
 		{
 			ModPathList(modFolderPath);
-			string _name = "";
-			string _bodyType = "";
+			string _type = "";
+			string _casRandom = "";
+			string _ageGender = "";
+			string _tuning = "";
 			List<ModModel> result = new List<ModModel>();
-			CASPartResource.CASPartResource resource;
 
 			foreach (string modPath in _modFilePathList)
 			{
@@ -87,7 +89,18 @@ namespace PVR.Core
 					{
 						try
 						{
-							resource = (CASPartResource.CASPartResource)WrapperDealer.GetResource(1, nowOpenPackage, resourceIndexEntry);
+							CASPartResource.CASPartResource resource = (CASPartResource.CASPartResource)WrapperDealer.GetResource(1, nowOpenPackage, resourceIndexEntry);
+							if (resource.ParameterFlags.HasFlag(CASPartResource.ParmFlag.AllowForCASRandom))
+							{
+								_casRandom = "True";
+							}
+							else
+							{
+								_casRandom = "False";
+							}
+
+							_type = resource.BodyType.ToString();
+							_ageGender = resource.AgeGender.ToString();
 						}
 						catch
 						{
@@ -95,26 +108,32 @@ namespace PVR.Core
 						}
 						
 						
-						_bodyType = resource.BodyType.ToString();
-						_name = resource.Name.ToString();
 					}
 					else if (types.Contains(resourceIndexEntry.ResourceType))
 					{
-						_bodyType = "Objects";
-						_name = "empty";
+						IResource resource = WrapperDealer.GetResource(1, nowOpenPackage, resourceIndexEntry);
+						List<string> v = resource.ContentFields;
 
+						_type = "Object";
+						_tuning = resource["Tuning"];
 						continue;
 					}
 				}
 
-				
+				nowOpenPackage.Dispose();
 				result.Add(new ModModel
 				{
 					FileName = Regex.Match(modPath, @"[^\\]+(?=\.package$)").ToString(),
-					Name = _name,
-					Type = _bodyType
-				}); 
+					Type = _type,
+					CASRandom = _casRandom,
+					AgeGender = _ageGender,
+					Tuning = _tuning
+				});
 
+				_type = "";
+				_casRandom = "";
+				_ageGender = "";
+				_tuning = "";
 			}
 
 			return result;

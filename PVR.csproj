@@ -74,25 +74,131 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DDSPanel">
+      <HintPath>..\..\..\..\Desktop\s4pi\DDSPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Ookii.Dialogs.Wpf, Version=5.0.0.0, Culture=neutral, PublicKeyToken=66aa232afad40158, processorArchitecture=MSIL">
       <HintPath>packages\Ookii.Dialogs.Wpf.5.0.1\lib\net462\Ookii.Dialogs.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.AnimationResources">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.AnimationResources.dll</HintPath>
     </Reference>
     <Reference Include="s4pi.CASPartResource">
       <HintPath>..\..\..\..\Desktop\s4pi\s4pi.CASPartResource.dll</HintPath>
     </Reference>
+    <Reference Include="s4pi.CatalogResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.CatalogResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Commons">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.ComplateResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.ComplateResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Controls">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.CustomForms">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.CustomForms.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.DataResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.DataResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.DefaultResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.DefaultResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.DWorldResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.DWorldResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Extensions">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Filetable">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Filetable.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.GenericRCOLResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.GenericRCOLResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Helpers">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.ImageResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.ImageResource.dll</HintPath>
+    </Reference>
     <Reference Include="s4pi.Interfaces">
       <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.JazzResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.JazzResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.LotDescriptionResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.LotDescriptionResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.MeshChunks">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.MeshChunks.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.MiscellaneousResources">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.MiscellaneousResources.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.ModularResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.ModularResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.NameMapResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.NameMapResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.NGMPHashMapResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.NGMPHashMapResource.dll</HintPath>
     </Reference>
     <Reference Include="s4pi.Package">
       <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Package.dll</HintPath>
     </Reference>
+    <Reference Include="s4pi.RCOLChunks">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.RCOLChunks.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.RegionDescriptionResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.RegionDescriptionResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.Resource.Commons">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Resource.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.RigResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.RigResource.dll</HintPath>
+    </Reference>
     <Reference Include="s4pi.Settings">
       <HintPath>..\..\..\..\Desktop\s4pi\s4pi.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.StblResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.StblResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.TerrainBlendMapResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.TerrainBlendMapResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.TerrainMeshResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.TerrainMeshResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.TextResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.TextResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.ThumbnailCacheResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.ThumbnailCacheResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.TxtcResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.TxtcResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.WorldDescriptionResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.WorldDescriptionResource.dll</HintPath>
+    </Reference>
+    <Reference Include="s4pi.WorldObjectDataResource">
+      <HintPath>..\..\..\..\Desktop\s4pi\s4pi.WorldObjectDataResource.dll</HintPath>
     </Reference>
     <Reference Include="s4pi.WrapperDealer">
       <HintPath>..\..\..\..\Desktop\s4pi\s4pi.WrapperDealer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Custom, Version=2104.21.1514.18445, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\s4pi\System.Custom.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />

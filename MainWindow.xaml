@@ -181,14 +181,74 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0"
-					   Grid.Column="0"
-					   Content="{Binding SelectedMod.Type}"
-					   Foreground="#EEEEEE"
-					   FontSize="20"/>
+                <StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="Name" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+						<Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="{Binding SelectedMod.FileName}" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+					</StackPanel>
+
+					<StackPanel Orientation="Horizontal">
+						<Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="Type" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+						<Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="{Binding SelectedMod.Type}" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+					</StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="CASRandom" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+                        <Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="{Binding SelectedMod.CASRandom}" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="Age Gender" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+                        <Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="{Binding SelectedMod.AgeGender}" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="Tuning" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+                        <Label Grid.Row="0"
+						   Grid.Column="0"
+						   Content="{Binding SelectedMod.Tuning}" 
+						   Foreground="#EEEEEE"
+						   FontSize="20"/>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
 
         </Grid>
