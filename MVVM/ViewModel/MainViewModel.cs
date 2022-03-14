@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using Ookii.Dialogs.Wpf;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using System.Windows;
 
 namespace PVR.MVVM.ViewModel
 {
     internal class MainViewModel : ObservableObject
     {
         public ObservableCollection<ModModel> Mods { get; set; }
+        public ObservableCollection<BitmapFrame> SelectedImages { get; set; }
+        public MainWindow mw = (MainWindow)Application.Current.MainWindow;
 
         public string modFolderPath;
 
@@ -25,9 +28,8 @@ namespace PVR.MVVM.ViewModel
             set 
             { 
                 _selectedMod = value;
-                _selectedImageIndex = 0;
-                SelectedImage = _selectedMod.Thumbnails[_selectedImageIndex];
                 OnPropertyChanged();
+                mw.ResetScrollPosition();
             }
         }
 
@@ -46,77 +48,11 @@ namespace PVR.MVVM.ViewModel
             }
         }
 
-        private ICommand _nextImageButtonClick;
-        public ICommand NextItemButtonClick
-        {
-            get
-            {
-                if (_nextImageButtonClick == null)
-                {
-                    _nextImageButtonClick = new RelayCommand(
-                        p => true,
-                        p => this.NextImage());
-                }
-                return _nextImageButtonClick;
-            }
-        }
-
-        private ICommand _prevImageButtonClick;
-        public ICommand PrevItemButtonClick
-        {
-            get
-            {
-                if (_prevImageButtonClick == null)
-                {
-                    _prevImageButtonClick = new RelayCommand(
-                        p => true,
-                        p => this.PrevImage());
-                }
-                return _prevImageButtonClick;
-            }
-        }
-
-        private BitmapFrame _selectedImage;
-        public BitmapFrame SelectedImage
-        {
-            get { return _selectedImage; }
-            set
-            {
-                _selectedImage = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private int _selectedImageIndex = 0;
-
-        public void NextImage()
-        {
-			if (_selectedMod != null)
-			{
-                if (_selectedImageIndex < (_selectedMod.Thumbnails.Count - 1))
-                {
-                    _selectedImageIndex++;
-                    SelectedImage = _selectedMod.Thumbnails[_selectedImageIndex];
-                }
-            }
-        }
-
-        public void PrevImage()
-        {
-            if (_selectedMod != null)
-            {
-                if (_selectedImageIndex > 0)
-                {
-                    _selectedImageIndex--;
-                    SelectedImage = _selectedMod.Thumbnails[_selectedImageIndex];
-                }
-            }
-        }
-
         public MainViewModel()
         {
             Mods = new ObservableCollection<ModModel>();
-
+            SelectedImages = new ObservableCollection<BitmapFrame>();
+            
         }
 
         public void PopulateModNameList()
@@ -132,6 +68,10 @@ namespace PVR.MVVM.ViewModel
                     List<ModModel> modList = modData.ReturnModModelObjectCollection(modFolderPath);
                     foreach (ModModel mod in modList){
                         Mods.Add(mod);
+						foreach (var image in mod.Thumbnails)
+						{
+                            SelectedImages.Add(image);
+						}
                     }
                 }
             }

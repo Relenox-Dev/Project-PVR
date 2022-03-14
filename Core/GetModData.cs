@@ -14,7 +14,7 @@ namespace PVR.Core
 	internal class GetModData
 	{
 
-		private static uint[] thumbnailsIds = new uint[]
+		private static readonly uint[] thumbnailsIds = new uint[]
 		{
 			0x0D338A3A,
 			0x16CCF748,
@@ -31,12 +31,12 @@ namespace PVR.Core
 			0x3C2A8647
 		};
 
-		private static uint[] flags = new uint[]
+		private static readonly uint[] flags = new uint[]
 		{
 			0x034AEECB
 		};
 
-		private static uint[] types = new uint[]
+		private static readonly uint[] types = new uint[]
 		{
 			0xC0DB5AE7
 		};

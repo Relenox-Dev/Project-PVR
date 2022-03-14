@@ -165,7 +165,9 @@
 					  Background="Transparent"
 					  BorderThickness="0"
 					  ItemContainerStyle="{StaticResource ModListItem}"
-					  SelectedItem="{Binding SelectedMod}"/>
+					  SelectedItem="{Binding SelectedMod}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
 
         </Grid>
 
@@ -235,37 +237,29 @@
                     </StackPanel>
                 </StackPanel>
 
-                <StackPanel Grid.Row="1"
-                            Orientation="Horizontal">
-                    <!-- button left, rotated 180* -->
-                    <Button Command="{Binding PrevItemButtonClick}">
-                        <Image Source="Images/arrow.jpg"
-                               Width="auto"
-                               HorizontalAlignment="Left"
-                               RenderTransformOrigin="0.5,0.5">
-                            <Image.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="180"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Image.RenderTransform>
-                        </Image>
-                    </Button>
-
-                    <Image Source="{Binding SelectedImage}"
-                           Width="auto"/>
-
-                    <!-- button right -->
-                    <Button Command="{Binding NextItemButtonClick}">
-                        <Image Source="Images/arrow.jpg"
-                               Width="auto"
-                               HorizontalAlignment="Right">
-                        </Image>
-                    </Button>
-
-                </StackPanel>
+                <ScrollViewer x:Name="MyScroll"
+                              Width="auto"
+                              Grid.Row="1" HorizontalScrollBarVisibility="Visible"
+                              VerticalScrollBarVisibility="Disabled">
+                    <ListView ItemsSource="{Binding SelectedMod.Thumbnails}"
+                              Background="Transparent"
+					          BorderThickness="0"
+                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
             </Grid>
 
         </Grid>
