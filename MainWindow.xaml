@@ -184,70 +184,87 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-					<StackPanel Orientation="Horizontal">
-						<Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="Name" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-						<Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="{Binding SelectedMod.FileName}" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-					</StackPanel>
-
-					<StackPanel Orientation="Horizontal">
-						<Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="Type" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-						<Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="{Binding SelectedMod.Type}" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-					</StackPanel>
-
-                    <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="CASRandom" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-                        <Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="{Binding SelectedMod.CASRandom}" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="0">
+                        <Label Content="Name" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                        <Label Content="{Binding SelectedMod.FileName}" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="Age Gender" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-                        <Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="{Binding SelectedMod.AgeGender}" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="0">
+                        <Label Content="Type" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                        <Label Content="{Binding SelectedMod.Type}" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="Tuning" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
-                        <Label Grid.Row="0"
-						   Grid.Column="0"
-						   Content="{Binding SelectedMod.Tuning}" 
-						   Foreground="#EEEEEE"
-						   FontSize="20"/>
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="0">
+                        <Label Content="CAS Random" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                        <Label Content="{Binding SelectedMod.CASRandom}" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
                     </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="0">
+                        <Label Content="Age Gender" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                        <Label Content="{Binding SelectedMod.AgeGender}" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="0">
+                        <Label Content="Tuning" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                        <Label Content="{Binding SelectedMod.Tuning}" 
+                               Foreground="#EEEEEE"
+                               FontSize="20"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1"
+                            Orientation="Horizontal">
+                    <!-- button left, rotated 180* -->
+                    <Button Command="{Binding PrevItemButtonClick}">
+                        <Image Source="Images/arrow.jpg"
+                               Width="auto"
+                               HorizontalAlignment="Left"
+                               RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                    </Button>
+
+                    <Image Source="{Binding SelectedImage}"
+                           Width="auto"/>
+
+                    <!-- button right -->
+                    <Button Command="{Binding NextItemButtonClick}">
+                        <Image Source="Images/arrow.jpg"
+                               Width="auto"
+                               HorizontalAlignment="Right">
+                        </Image>
+                    </Button>
+
                 </StackPanel>
             </Grid>
 

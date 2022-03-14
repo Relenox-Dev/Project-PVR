@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Media.Imaging;
 using PVR.MVVM.Model;
 using s4pi.Interfaces;
 using s4pi.Package;
@@ -13,7 +14,7 @@ namespace PVR.Core
 	internal class GetModData
 	{
 
-		private static uint[] thumbnails = new uint[]
+		private static uint[] thumbnailsIds = new uint[]
 		{
 			0x0D338A3A,
 			0x16CCF748,
@@ -80,6 +81,8 @@ namespace PVR.Core
 					continue;
 				}
 
+				List<BitmapFrame> _thumbnails = new List<BitmapFrame>();
+
 				IPackage nowOpenPackage = Package.OpenPackage(0, modPath);
 				foreach (IResourceIndexEntry resourceIndexEntry in nowOpenPackage.GetResourceList)
 				{
@@ -101,6 +104,7 @@ namespace PVR.Core
 
 							_type = resource.BodyType.ToString();
 							_ageGender = resource.AgeGender.ToString();
+							
 						}
 						catch
 						{
@@ -112,11 +116,16 @@ namespace PVR.Core
 					else if (types.Contains(resourceIndexEntry.ResourceType))
 					{
 						IResource resource = WrapperDealer.GetResource(1, nowOpenPackage, resourceIndexEntry);
-						List<string> v = resource.ContentFields;
 
 						_type = "Object";
 						_tuning = resource["Tuning"];
 						continue;
+					}
+					
+					if(thumbnailsIds.Contains(resourceIndexEntry.ResourceType))
+					{
+						IResource image_resource = WrapperDealer.GetResource(1, nowOpenPackage, resourceIndexEntry);
+						_thumbnails.Add(BitmapFrame.Create(image_resource.Stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad));
 					}
 				}
 
@@ -127,13 +136,15 @@ namespace PVR.Core
 					Type = _type,
 					CASRandom = _casRandom,
 					AgeGender = _ageGender,
-					Tuning = _tuning
+					Tuning = _tuning,
+					Thumbnails = _thumbnails
 				});
 
 				_type = "";
 				_casRandom = "";
 				_ageGender = "";
 				_tuning = "";
+
 			}
 
 			return result;
