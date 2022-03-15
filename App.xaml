@@ -11,6 +11,7 @@
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Themes/ModListItem.xaml"/>
+                <ResourceDictionary Source="./Themes/ImageListItem.xaml"/>
                 <ResourceDictionary Source="./Themes/ButtonHover.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

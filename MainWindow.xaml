@@ -161,13 +161,28 @@
 			  Grid.Row="2"
 			  Margin="10,10,5,10">
 
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+
             <ListView ItemsSource="{Binding Mods}"
 					  Background="Transparent"
 					  BorderThickness="0"
 					  ItemContainerStyle="{StaticResource ModListItem}"
 					  SelectedItem="{Binding SelectedMod}"
                       ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                      ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                      Grid.Row="0"
+                      SelectionMode="Single"/>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="1">
+                <Label Content="Mods listed:"
+                       Foreground="#EEEEEE"/>
+                <Label Content="{Binding Mods.Count}"
+                       Foreground="#EEEEEE"/>
+            </StackPanel>
 
         </Grid>
 
@@ -244,6 +259,7 @@
                     <ListView ItemsSource="{Binding SelectedMod.Thumbnails}"
                               Background="Transparent"
 					          BorderThickness="0"
+                              ItemContainerStyle ="{StaticResource ImageListItem}"
                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListView.ItemsPanel>

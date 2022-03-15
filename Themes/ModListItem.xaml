@@ -9,8 +9,10 @@
 			</Trigger>
 		</Style.Triggers>
 
-		<Setter Property="Background" Value="#5500ADB5"/>
-		<Setter Property="Template">
+        <Setter Property="Background" Value="#5500ADB5"/>
+        <Setter Property="MaxWidth" Value="335"/>
+        
+        <Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="ListViewItem">
 					<Border Background="{TemplateBinding Background}"
